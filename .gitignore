@@ -2,6 +2,8 @@
 .gitignore
 .share/
 Kvantum/
+Thunar/
+binwalk/
 clipit/
 dconf/
 dir_colors
@@ -12,6 +14,7 @@ epdfview/
 falkon/
 fontconfig/
 gconf/
+gh/
 gtk-3.0/
 hexchat/
 htop/
@@ -22,6 +25,7 @@ morc_menu/
 mozilla/
 nitrogen/
 pamac/
+pavucontrol.ini
 pcmanfm/
 picom.conf
 pulse/
