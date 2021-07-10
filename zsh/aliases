@@ -1,0 +1,9 @@
+## Alias section 
+alias cp="cp -i"                                                # Confirm before overwriting something
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
+
+alias lj='ls -als'
+
+alias vim2="vim"
+alias vim="nvim"

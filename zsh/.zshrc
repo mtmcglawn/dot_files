@@ -36,8 +36,8 @@ zstyle ':completion:*' cache-path $HOME/.config/zsh/cache
 HISTFILE=$HOME/.config/zsh/zhistory
 HISTSIZE=1000
 SAVEHIST=1000
-#export EDITOR=/usr/bin/nano
-#export VISUAL=/usr/bin/nano
+export EDITOR=/usr/local/bin/nvim
+export VISUAL=/usr/local/bin/nvim
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
@@ -68,11 +68,6 @@ bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
-## Alias section 
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
-alias gitu='git add . && git commit && git push'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -208,9 +203,7 @@ autoload -U add-zsh-hook
 add-zsh-hook precmd mzc_termsupport_precmd
 add-zsh-hook preexec mzc_termsupport_preexec
 
-
-
-
-
-alias vim2="vim"
-alias vim="nvim"
+# source aliases
+if [ -e $XDG_CONFIG_HOME/zsh/aliases ]; then
+	source $XDG_CONFIG_HOME/zsh/aliases 
+fi
