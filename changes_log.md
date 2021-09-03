@@ -90,6 +90,13 @@ sudo mv ~/.dir_colors /etc/DIR_COLORS
 sudo chown root:root /etc/DIR_COLORS
 ```
 
+13. Inside `/etc/bash.bashrc` add:
+```sh
+if [ -f ${XDG_CONFIG_HOME}/bash/bashrc ]; then
+	. ${XDG_CONFIG_HOME}/bash/bashrc
+fi
+```
+
 
 
 #Installs from Source

@@ -57,6 +57,6 @@ find3() {
 }
 
 # easy "rc" editing
-alias bashrc="vim ~/.bashrc"
-alias aliases="vim ~/.bash_aliases"
+alias bashrc="vim ~/.config/bash/bashrc"
+alias aliases="vim ~/.config/bash/bash_aliases"
 alias vimrc="vim ~/.vimrc"
