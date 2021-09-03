@@ -3,6 +3,7 @@
 .share/
 Kvantum/
 Thunar/
+bash/bash_history
 binwalk/
 clipit/
 dconf/
