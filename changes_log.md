@@ -5,8 +5,8 @@ It also contains steps that I do to create my optimized setup.
 There will be additional .sh files made later to automate these changes (hopefully).
 
 1. Create `~/Projects`
-2. Create `~/Projects/dotfiles`
-3. Create `~/Projects/dotfiles/changes_log.md`
+2. Create `~/.config` if it doesn't already exist
+3. Set up .config to track from dotfiles repo and pull
 4. In `/etc/X11/xorg.conf.d/30-touchpad.conf` I made the following changes:
 
 ```xf86conf
@@ -32,12 +32,12 @@ EndSection
 
 5. Install Firefox
 
-`sudo pamac firefox-developer-edition`
+`sudo pamac firefox`
 
 6. Setup SSH keys
 
 ```sh
-ssh-keygen -t ed25519 -C "mtm0002@auburn.edu"
+ssh-keygen -t ed25519 -C "mtmcglawn@gmail.edu"
 ```
 
 > When asked for a location use the default.
@@ -49,19 +49,24 @@ ssh-add ~/.ssh/id_ed25519
 
 7. Install the new ssh keys to GitHub - must use firefox (palemoon not supported on github)
 
-8. Install Neovim
+8. Instal neovim dependencies:
+
+`sudo pamac install cmake`
+`sudo pamac install unzip`
+
+9. Install Neovim
 
 `cd ~/Projects && git clone git@github.com:neovim/neovim.git`
 
-9. Build and release neovim
+10. Build and release neovim
 
 ```sh
 cd ~/Projects/neovim && rm -r build/
-make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/opt/neovim
+make CMAKE_:INSTALL_PREFIX=/opt/neovim
 sudo make install
 ```
 
-10. Update i3 config file
+11. Update i3 config file
 
 ```sh
 cp ~/.i3/config ~/.i3/config.orig
@@ -69,21 +74,20 @@ cp ~/.i3/config ~/.i3/config.orig
 
 Then replace/adjust the old config file.
 
-11. Change as many cache locations to be within `.config` to clean up the home directory
+12. Change as many cache locations to be within `.config` to clean up the home directory
 
-* Inside /etc/profile.d/home-local-bin.sh add:
+* Create /etc/profile.d/a-xdg-config.sh and add:
 
 ```sh
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/.cache"
 export XDG_DATA_HOME="$XDG_CONFIG_HOME/.share"
 export XDG_RUNTIME_HOME="$XDG_CONFIG_HOME/.share"
-export PATH="$HOME/.local/bin:$PATH"
 ```
 
 * Inside 
 
-12. If the file `~/.dir_colors` exists and `/etc/DIR_COLORS` does not, do the following:
+13. If the file `~/.dir_colors` exists and `/etc/DIR_COLORS` does not, do the following:
 
 ```sh
 sudo mv ~/.dir_colors /etc/DIR_COLORS
@@ -105,5 +109,5 @@ Optional steps to take after installing from source in order to add to all users
 
 ```sh
 #sudo ln -s /opt/neovim/bin/nvim /usr/bin/nvim
-#sudo cp -r /opt/neovim/nvim.desktop /usr/share/applications
+#sudo cp -r /opt/neovim/share/applications/nvim.desktop /usr/share/applications
 ```

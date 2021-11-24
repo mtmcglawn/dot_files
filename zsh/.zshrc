@@ -1,10 +1,12 @@
-# Use manjaro zsh prompt
+# Use powerline
+USE_POWERLINE="true"
+# Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-	source /usr/share/zsh/manjaro-zsh-config
+  source /usr/share/zsh/manjaro-zsh-config
 fi
 # Use manjaro zsh prompt
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-	source /usr/share/zsh/manjaro-zsh-prompt
+  source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
 
@@ -24,6 +26,7 @@ setopt appendhistory                                            # Immediately ap
 setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
 setopt autocd                                                   # if only directory path is entered, cd there.
 setopt inc_append_history                                       # save commands are added to the history immediately, otherwise only when shell exits.
+setopt histignorespace                                          # Don't save commands that start with space
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
@@ -36,8 +39,8 @@ zstyle ':completion:*' cache-path $HOME/.config/zsh/cache
 HISTFILE=$HOME/.config/zsh/zhistory
 HISTSIZE=1000
 SAVEHIST=1000
-export EDITOR=/usr/local/bin/nvim
-export VISUAL=/usr/local/bin/nvim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
@@ -68,6 +71,11 @@ bindkey '^[[1;5C' forward-word                                  #
 bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
+## Alias section 
+alias cp="cp -i"                                                # Confirm before overwriting something
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
+alias gitu='git add . && git commit && git push'
 
 # Theming section  
 autoload -U compinit colors zcalc
@@ -202,6 +210,11 @@ function mzc_termsupport_preexec {
 autoload -U add-zsh-hook
 add-zsh-hook precmd mzc_termsupport_precmd
 add-zsh-hook preexec mzc_termsupport_preexec
+
+# File and Dir colors for ls and other outputs
+export LS_OPTIONS='--color=auto'
+eval "$(dircolors -b)"
+alias ls='ls $LS_OPTIONS'
 
 # source aliases
 if [ -e $XDG_CONFIG_HOME/zsh/aliases ]; then
