@@ -9,7 +9,7 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
-
+export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
 
 
 
