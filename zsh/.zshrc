@@ -95,9 +95,9 @@ export LESS=-R
 
 ## Plugins section: Enable fish style features
 # Use syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $XDG_CONFIG_HOME/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # bind UP and DOWN arrow keys to history substring search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
@@ -219,4 +219,9 @@ alias ls='ls $LS_OPTIONS'
 # source aliases
 if [ -e $XDG_CONFIG_HOME/zsh/aliases ]; then
 	source $XDG_CONFIG_HOME/zsh/aliases 
+fi
+
+# source oh-my-zsh configs
+if [ -e $XDG_CONFIG_HOME/zsh/oh-my-zshrc ]; then
+	source $XDG_CONFIG_HOME/zsh/oh-my-zshrc 
 fi

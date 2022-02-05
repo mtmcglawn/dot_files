@@ -101,7 +101,10 @@ if [ -f ${XDG_CONFIG_HOME}/bash/bashrc ]; then
 fi
 ```
 
-
+14. If root access is allowed, inside `/etc/zsh/zshenv` and possibly `/etc/zsh/zshrc`, add:
+```sh
+ZDOTDIR=$XDG_CONFIG_HOME/zsh
+```
 
 #Installs from Source
 

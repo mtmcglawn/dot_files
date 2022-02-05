@@ -37,5 +37,5 @@ user-dirs.dirs
 user-dirs.locale
 volumeicon/
 xfce4/
-zsh/.zcompdump
+zsh/.zcompdump*
 zsh/zhistory
