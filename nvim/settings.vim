@@ -1,4 +1,5 @@
 " GENERAL SETTINGS
+filetype plugin on
 ":fixdel                                        " If <DELETE> is messed up, this will fix it
 set autoindent                                  " Copy indent from current line when starting a new line
 set backspace=indent,eol,start                  " Allows backspacing over everything in insert mode
