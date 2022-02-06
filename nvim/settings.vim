@@ -60,3 +60,6 @@ set incsearch                                   " Do incremental searching to ti
 
 set backup                                      " Keep a backup file (restore to previous version)
 set undofile                                    " Keep an undo file (undo changes after closing)
+
+let g:general_mapping_file = expand($XDG_CONFIG_HOME) . '/nvim/mappings/global.vim'
+execute 'source '.general_mapping_file

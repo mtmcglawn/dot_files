@@ -33,4 +33,3 @@ set viminfo=%,<800,'10,/50,:100,h,f0,n$XDG_CACHE_HOME/nvim/viminfo
 
 let g:general_settings_file = expand($XDG_CONFIG_HOME) . '/nvim/settings.vim'
 execute 'source '.general_settings_file
-
