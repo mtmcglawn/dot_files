@@ -12,3 +12,6 @@ setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal tabstop=2
 setlocal textwidth=79
+
+" Create a comment block for testing
+nnoremap <leader>tt ostd::cout << "MTM <C-R>=expand("%:t")<ESC> LINE <C-R>=line('.')<ESC> "<CR><<std::endl;<ESC>

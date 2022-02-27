@@ -1,0 +1,2 @@
+setlocal nu
+setlocal rnu

@@ -49,12 +49,22 @@ alias grep2='grep -rIni \\
 --exclude="*.log"'
 
 # find aliases
-alias find2='find . -name'
 #work in progress
-find3() {
-	files=$(find . -iname "*$#*")
-	echo $files
+find2() {
+	files=$(find . -iname "*$1*")
+	for file in $files; do
+		filename=$(basename -- "$file")
+		extension="${filename##*.}"
+		if [[ $(echo $file | grep ".git") ]]; then
+			continue
+		fi
+		if [[ "$extension" == "a" ]]; then
+			continue
+		fi
+		echo $file | grep -i --color=auto $1
+	done
 }
+alias find3='find . -name'
 
 # easy "rc" editing
 alias bashrc="vim ~/.config/bash/bashrc"

@@ -1,0 +1,9 @@
+setlocal autoindent
+setlocal expandtab
+setlocal foldlevel=99
+setlocal foldmethod=manual
+setlocal nu
+setlocal rnu
+setlocal shiftwidth=2
+setlocal softtabstop=2
+setlocal tabstop=2

@@ -1,14 +1,10 @@
-setlocal cindent
-setlocal background=dark
-setlocal encoding=utf-8
+setlocal autoindent
 setlocal expandtab
-setlocal fileformat=unix
 setlocal foldlevel=99
 setlocal foldmethod=syntax
 setlocal nu
 setlocal rnu
-setlocal shiftround
 setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal tabstop=2
-setlocal textwidth=79
+setlocal textwidth=99
