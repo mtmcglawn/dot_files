@@ -225,3 +225,8 @@ fi
 if [ -e $XDG_CONFIG_HOME/zsh/oh-my-zshrc ]; then
 	source $XDG_CONFIG_HOME/zsh/oh-my-zshrc 
 fi
+
+# source homebrew in mac
+if [ -e /opt/homebrew ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
