@@ -216,6 +216,11 @@ export LS_OPTIONS='--color=auto'
 eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
 
+# source machine specific paths
+if [ -e $XDG_CONFIG_HOME/zsh/local_paths ]; then
+	source $XDG_CONFIG_HOME/zsh/local_paths 
+fi
+
 # source aliases
 if [ -e $XDG_CONFIG_HOME/zsh/aliases ]; then
 	source $XDG_CONFIG_HOME/zsh/aliases 

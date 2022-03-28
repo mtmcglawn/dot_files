@@ -45,4 +45,5 @@ volumeicon/
 xfce4/
 zsh/.zcompdump*
 zsh/.zsh_sessions/
+zsh/local_paths
 zsh/zhistory
