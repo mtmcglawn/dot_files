@@ -7,3 +7,5 @@
 	tool = nvimdiff
 [merge]
 	tool = nvimdiff
+[color]
+	ui = true
