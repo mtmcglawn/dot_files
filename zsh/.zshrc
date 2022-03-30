@@ -213,7 +213,14 @@ add-zsh-hook preexec mzc_termsupport_preexec
 
 # File and Dir colors for ls and other outputs
 export LS_OPTIONS='--color=auto'
-eval "$(dircolors -b)"
+if whence dircolors >/dev/null; then
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+	eval "$(dircolors -b)"
+	alias ls='ls --color'
+else
+	export CLI_COLOR=1
+	zstyle ':completion:*:default' list-colors ''
+fi
 alias ls='ls $LS_OPTIONS'
 
 # source machine specific paths
