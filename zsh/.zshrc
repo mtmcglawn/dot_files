@@ -10,6 +10,7 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
 fi
 
 export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
+export PATH="/opt/homebrew/bin:$PATH"
 
 
 
