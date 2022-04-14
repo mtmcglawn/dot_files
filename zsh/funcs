@@ -1,0 +1,17 @@
+git_help_about_git_aliases() {
+	git_version="${${(As: :)$(git version 2>/dev/null)}[3]}"
+	if (( $# == 0 )); then
+		git_aliases=$(grep alias $XDG_CONFIG_HOME/zsh/oh-my-zsh/plugins/git/git.plugin.zsh)
+		is-at-least 2.8 "$git_version" \
+		  && git_aliases=$(echo $git_aliases | sed -e 's/  || alias gfa=.*\\n//' | sed -e 's/ \\//') \
+		  || git_aliases=$(echo $git_aliases | sed -e 's/  && alias gfa=.*\\n//' | sed -e 's/ \\//')
+		is-at-least 2.13 "$git_version" \
+		  && git_aliases=$(echo $git_aliases | sed -e 's/  || alias gsta=.*\\n//' | sed -e 's/ \\//') \
+		  || git aliases=$(echo $git_aliases | sed -e 's/  && alias gsta=.*\\n//' | sed -e 's/ \\//')
+	else
+		git_aliases=$(grep "alias.*git $1" $XDG_CONFIG_HOME/zsh/oh-my-zsh/plugins/git/git.plugin.zsh)
+	fi
+	for git_alias in $git_aliases; do
+		echo $git_alias | sed -e 's/.*alias //'
+	done
+}

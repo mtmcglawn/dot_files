@@ -229,6 +229,11 @@ if [ -e $XDG_CONFIG_HOME/zsh/local_paths ]; then
 	source $XDG_CONFIG_HOME/zsh/local_paths 
 fi
 
+# source functions
+if [ -e $XDG_CONFIG_HOME/zsh/funcs ]; then
+	source $XDG_CONFIG_HOME/zsh/funcs 
+fi
+
 # source aliases
 if [ -e $XDG_CONFIG_HOME/zsh/aliases ]; then
 	source $XDG_CONFIG_HOME/zsh/aliases 

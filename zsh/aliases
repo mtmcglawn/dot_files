@@ -15,3 +15,8 @@ alias zshrc='nvim $ZDOTDIR/.zshrc'
 
 alias n='nvim'
 alias ndiff='nvimdiff'
+
+
+# Function aliases
+
+alias ghe="git_help_about_git_aliases"
