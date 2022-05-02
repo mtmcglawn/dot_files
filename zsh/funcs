@@ -15,3 +15,10 @@ git_help_about_git_aliases() {
 		echo $git_alias | sed -e 's/.*alias //'
 	done
 }
+
+get_help_about_tmux_aliases() {
+	tmux_aliases=$(grep alias $XDG_CONFIG_HOME/zsh/oh-my-zsh/plugins/tmux/tmux.plugin.zsh)
+	for tmux_alias in $tmux_aliases; do
+		echo $tmux_alias | sed -e 's/.*alias //'
+	done
+}

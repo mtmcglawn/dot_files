@@ -20,3 +20,4 @@ alias ndiff='nvimdiff'
 # Function aliases
 
 alias ghe="git_help_about_git_aliases"
+alias the="get_help_about_tmux_aliases"
