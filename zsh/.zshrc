@@ -37,12 +37,12 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path $HOME/.config/zsh/cache
-HISTFILE=$HOME/.config/zsh/zhistory
-HISTSIZE=1000
-SAVEHIST=1000
+export HISTFILE=$HOME/.config/zsh/zhistory
+export HISTSIZE=1000
+export SAVEHIST=1000
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
-WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
+export WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
 ## Keybindings section
