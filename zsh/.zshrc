@@ -12,6 +12,7 @@ fi
 export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
 export PATH="/opt/homebrew/bin:$PATH"
 
+export ZSH_TMUX_CONFIG=$XDG_CONFIG_HOME/tmux/tmux.conf
 
 
 

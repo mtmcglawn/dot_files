@@ -39,6 +39,8 @@ pulse/
 qt5ct/
 ranger/
 spotify/
+!tmux/plugins/tpm/
+tmux/plugins/
 user-dirs.dirs
 user-dirs.locale
 volumeicon/
