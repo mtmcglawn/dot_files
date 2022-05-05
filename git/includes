@@ -1,0 +1,10 @@
+[core]
+	editor = nvim
+[diff]
+	tool = nvimdiff
+[merge]
+	tool = nvimdiff
+[color]
+	ui = true
+
+# vim: filetype=gitconfig

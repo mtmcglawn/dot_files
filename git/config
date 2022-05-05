@@ -1,11 +1,5 @@
 [user]
 	email = mtmcglawn@gmail.com
 	name = Matthew Tyler McGlawn
-[core]
-	editor = nvim
-[diff]
-	tool = nvimdiff
-[merge]
-	tool = nvimdiff
-[color]
-	ui = true
+[include]
+	path = includes
