@@ -22,6 +22,7 @@ set laststatus=2                                " Always show the status line at
 set linespace=2                                 " No extra spaces between rows
 set magic                                       " Changes the special characters that can be used in search patterns
 set modeline                                    " Allows for settings to be read from source code
+set mouse=a                                     " Allows for mouse control
 set nowrap                                      " Prevent the line from wrapping around to the line below
 set nrformats-=octals                           " Do not recognize octal numbers for <CTRL-A> and <CTRL-X>
 set ruler                                       " Show the cursor position all the time
