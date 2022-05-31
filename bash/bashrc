@@ -8,6 +8,17 @@ case $- in
       *) return;;
 esac
 
+# set the XDG variables if they don't exist
+if [ ! $XDG_CONFIG_HOME ] && [ -d $HOME/.config ]; then
+	export XDG_CONFIG_HOME="$HOME/.config"
+	export XDG_CACHE_HOME="$XDG_CONFIG_HOME/.cache"
+	export XDG_DATA_HOME="$XDG_CONFIG_HOME/.share"
+	export XDG_RUNTIME_HOME="$XDG_CONFIG_HOME/.share"
+fi
+
+# set the location of vimrc
+export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
+
 # set the history file location
 if [ $XDG_CONFIG_HOME ]; then
 	HISTFILE="$XDG_CONFIG_HOME/bash/bash_history"
@@ -55,7 +66,7 @@ shopt -s globstar
 # path variables
 export PATH=''${PATH}
 
-if [ ${HOSTNAME} == 'server' ] && [ ${SHLVL} == # ]; then
+if [ ${HOSTNAME} == 'server' ] && [ ${SHLVL} == "#" ]; then
 	echo 'on server'
 	newgrp group
 	exit
