@@ -30,6 +30,7 @@ monitors.xml
 monitors.xml~
 morc_menu/
 mozilla/
+nautilus/
 nitrogen/
 pamac/
 pavucontrol.ini
@@ -45,6 +46,7 @@ user-dirs.dirs
 user-dirs.locale
 volumeicon/
 xfce4/
+yelp/
 zsh/.zcompdump*
 zsh/.zsh_sessions/
 zsh/local_paths
