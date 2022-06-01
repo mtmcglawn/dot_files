@@ -39,6 +39,7 @@ picom.conf
 pulse/
 qt5ct/
 ranger/
+run-welcome-tour
 spotify/
 !tmux/plugins/tpm/
 tmux/plugins/
