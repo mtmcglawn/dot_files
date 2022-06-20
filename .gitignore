@@ -1,13 +1,35 @@
+# Ignore everything not specified
 **
+
+# bash
 !bash/
+!bash/**
 bash/bash_history
+
+# changes log
 !changes_log.md
+
+# git
 !git/
+!git/**
+
+# nvim
 !nvim/
+!nvim/**
+
+# tmux
 !tmux/
+!tmux/**
+tmux/plugins/
 !tmux/plugins/tpm/
+
+# vim
 !vim/
+!vim/**
+
+# zsh
 !zsh/
+!zsh/**
 zsh/.zcompdump*
 zsh/.zsh_sessions/
 zsh/local_paths
