@@ -10,7 +10,7 @@ setlocal foldlevel=99
 setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal tabstop=4
-setlocal textwidth=0
+setlocal textwidth=80
 
 inoremap <C-P> <C-G>u<ESC>[s1z=`]a<C-G>u
 
