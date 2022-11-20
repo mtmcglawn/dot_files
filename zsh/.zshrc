@@ -41,8 +41,8 @@ zstyle ':completion:*' cache-path $HOME/.config/zsh/cache
 export HISTFILE=$HOME/.config/zsh/zhistory
 export HISTSIZE=1000
 export SAVEHIST=1000
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR=`which nvim`
+export VISUAL=`which nvim`
 export WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 
