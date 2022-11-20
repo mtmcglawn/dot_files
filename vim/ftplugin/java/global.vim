@@ -1,0 +1,1 @@
+../../../nvim/ftplugin/java/global.vim

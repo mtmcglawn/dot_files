@@ -1,0 +1,1 @@
+../../../nvim/ftplugin/markdown/global.vim
