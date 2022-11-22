@@ -1,0 +1,1 @@
+../../../nvim/ftplugin/gitcommit/global.vim

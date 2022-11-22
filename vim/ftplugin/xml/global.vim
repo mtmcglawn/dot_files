@@ -1,0 +1,1 @@
+../../../nvim/ftplugin/xml/global.vim
