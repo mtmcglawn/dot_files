@@ -9,10 +9,12 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+export GPG_TTY=$(tty)
 export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
 export PATH="/opt/homebrew/bin:$PATH"
 
 export ZSH_TMUX_CONFIG=$XDG_CONFIG_HOME/tmux/tmux.conf
+
 
 
 
