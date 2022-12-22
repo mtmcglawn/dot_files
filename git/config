@@ -3,3 +3,4 @@
 	name = Matthew Tyler McGlawn
 [include]
 	path = includes
+	path = local

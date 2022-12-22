@@ -6,5 +6,9 @@
 	tool = nvimdiff
 [color]
 	ui = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
 
 # vim: filetype=gitconfig
