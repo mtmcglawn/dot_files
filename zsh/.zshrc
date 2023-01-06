@@ -49,6 +49,7 @@ if which nvim &> /dev/null ; then
 else
 	export EDITOR=`which vim`
 	export VISUAL=`which vim`
+	alias nvim=$EDITOR
 fi
 export WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
