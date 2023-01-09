@@ -10,7 +10,7 @@ setlocal rnu
 setlocal shiftwidth=4
 setlocal softtabstop=4
 setlocal tabstop=4
-setlocal textwidth=80
+setlocal textwidth=79
 
 " Display tabs at the beginning of a line in Python as bad.
 au BufRead,BufNewFile *.py,*.pyw match BadWhiteSpace /^\t\+/
