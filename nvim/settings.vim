@@ -177,6 +177,22 @@ augroup END
 
 
 
+" Filetypes
+
+augroup filetypedetect
+  " Use 'setfiletype foo' to only override if filetype is not already found
+  " Use 'set filetype=foo' to override filetype regardless
+  " 
+  " HLA FOM types
+  au BufNewFile,BufRead *.fed set filetype=lisp
+  au BufNewFile,BufRead *.omt set filetype=lisp
+  au BufNewFile,BufRead *.omd set filetype=lisp
+augroup END
+
+
+
+
+
 " PATH
 
 " Where to look for 'find' and 'gf'
