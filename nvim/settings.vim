@@ -187,6 +187,9 @@ augroup filetypedetect
   au BufNewFile,BufRead *.fed set filetype=lisp
   au BufNewFile,BufRead *.omt set filetype=lisp
   au BufNewFile,BufRead *.omd set filetype=lisp
+  "
+  " Jenkinsfile
+  au BufNewFile,BufRead Jenkinsfile set filetype=groovy
 augroup END
 
 
