@@ -4,7 +4,7 @@ alias df='df -h'                                                # Human-readable
 alias free='free -m'                                            # Show sizes in MB
 
 alias grep2='grep -inrI'
-alias find2='find . -iname'
+alias find3='find . -iname'
 
 alias lj='ls -als'
 
@@ -21,3 +21,4 @@ alias ndiff='nvimdiff'
 
 alias ghe="git_help_about_git_aliases"
 alias the="get_help_about_tmux_aliases"
+alias find2="find_files_and_ignore_some_filetypes"
