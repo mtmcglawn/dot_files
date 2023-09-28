@@ -22,3 +22,23 @@ get_help_about_tmux_aliases() {
 		echo $tmux_alias | sed -e 's/.*alias //'
 	done
 }
+
+find_files_and_ignore_some_filetypes() {
+	files=$(find . -iname "*$1*")
+	for file in $=files; do
+		filename=$(basename -- "$file")
+		extension="${filename##*.}"
+		if [[ -n "$(echo $file | grep ".git")" ]]; then
+			continue
+		fi
+		if [[ "$extension" == "a" ]]; then
+			continue
+		fi
+		if [[ "$extension" == "vcxproj" ]]; then
+			continue
+		fi
+		echo $file | grep -i --color=auto $1
+	done
+}
+
+# vim: ft=zsh

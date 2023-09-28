@@ -12,6 +12,7 @@ bash/bash_history
 # git
 !git/
 !git/**
+git/local
 
 # nvim
 !nvim/

@@ -27,7 +27,7 @@ else
 fi
 
 # allow others to read/write my files
-umask 002 # Note: Inverse of typical permissions. I.e., 002 sets a new file to 775
+umask 0002 # Note: Inverse of typical permissions. I.e., 0002 sets a new file to 0775
 
 # ?allow core?
 ulimit -c unlimited

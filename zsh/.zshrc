@@ -9,10 +9,13 @@ if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
 
+export GPG_TTY=$(tty)
 export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
 export PATH="/opt/homebrew/bin:$PATH"
 
 export ZSH_TMUX_CONFIG=$XDG_CONFIG_HOME/tmux/tmux.conf
+
+umask 0002 # Note: Inverse of typical permissions. I.e., 0002 sets a new file to 0775
 
 
 
@@ -47,6 +50,7 @@ if which nvim &> /dev/null ; then
 else
 	export EDITOR=`which vim`
 	export VISUAL=`which vim`
+	alias nvim=$EDITOR
 fi
 export WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
