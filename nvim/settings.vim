@@ -161,16 +161,32 @@ endif
 
 augroup spellfiles
   autocmd!
-  " per file spellfile
-  autocmd! BufNewFile,BufRead * let &l:spellfile .= expand('%:p:h') . '/.' . 'local.en.utf-8.add'
+  " per git repo or file spellfile
+  "let &l:git_path = system('type git')
+  "silent! !type git
+  let git_type = system('type git')
+  if v:shell_error == 0
+    let git_path = trim(system('which git'))
+    lcd %:p:h
+    let is_git_repo = trim(system(git_path . ' rev-parse --is-inside-work-tree'))
+    lcd -
+    if is_git_repo == 'true'
+      let git_repo = trim(system(git_path . ' rev-parse --show-toplevel'))
+      autocmd BufNewFile,BufRead * let &l:spellfile .= git_repo . '/.' . 'local.en.utf-8.add'
+    else
+      autocmd BufNewFile,BufRead * let &l:spellfile .= expand('%:p:h') . '/.' . 'local.en.utf-8.add'
+    endif
+  else
+    autocmd BufNewFile,BufRead * let &l:spellfile .= expand('%:p:h') . '/.' . 'local.en.utf-8.add'
+  endif
   " per filetype spellfile
   if &ft == 'markdown'
-    autocmd! BufNewFile,BufRead * let &l:spellfile .= ',' . expand($XDG_CONFIG_HOME) . expand('/nvim/spell/', 'p:h') . &ft . 'markdown.en.utf-8.add'
+    autocmd BufNewFile,BufRead * let &l:spellfile .= ',' . expand($XDG_CONFIG_HOME) . expand('/nvim/spell/', 'p:h') . &ft . 'markdown.en.utf-8.add'
   else
-    autocmd! BufNewFile,BufRead * let &l:spellfile .= ',' . expand($XDG_CONFIG_HOME) . expand('/nvim/spell/', 'p:h') . &ft . 'en.utf-8.add'
+    autocmd BufNewFile,BufRead * let &l:spellfile .= ',' . expand($XDG_CONFIG_HOME) . expand('/nvim/spell/', 'p:h') . &ft . '/' . 'en.utf-8.add'
   endif
   " per global spellfile (FileType autocmd seems to fire before BufNewFile)
-  autocmd! BufNewFile,BufRead * let &l:spellfile .= ',' . expand($XDG_CONFIG_HOME) . expand('/nvim/spell/', 'p:h') . 'en.utf-8.add'
+  autocmd BufNewFile,BufRead * let &l:spellfile .= ',' . expand($XDG_CONFIG_HOME) . expand('/nvim/spell/', 'p:h') . 'en.utf-8.add'
 augroup END
 
 

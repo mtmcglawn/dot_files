@@ -17,6 +17,8 @@ git/local
 # nvim
 !nvim/
 !nvim/**
+nvim/spell/*.spl
+nvim/spell/**/*.spl
 
 # tmux
 !tmux/
