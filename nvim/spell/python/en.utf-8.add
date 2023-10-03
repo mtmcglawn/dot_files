@@ -1,0 +1,11 @@
+anaconda3
+python3
+pylint
+ifnot
+endif
+src
+noqa
+E501
+py
+F401
+F403
