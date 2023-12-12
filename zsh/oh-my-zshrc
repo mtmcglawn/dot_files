@@ -8,7 +8,13 @@ export ZSH="$XDG_CONFIG_HOME/zsh/oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+if [[ "$(uname)" == "Darwin" ]] && /usr/sbin/lsof -c Terminal | grep -q Powerline; then
+	ZSH_THEME="spaceship"
+elif [[ "$(uname)" -eq "Linux" ]] && uname -r | grep -Eq "el" && grep -Eo "[0-9]*\.[0-9]*" /etc/redhat-release | xargs printf "%s\n" "8.0" | sort -C -V && yum -C -q list installed | grep -q powerline; then
+	ZSH_THEME="spaceship"
+else
+	ZSH_THEME="custom-theme"
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

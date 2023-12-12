@@ -1,3 +1,8 @@
+# source local pre oh-my-zsh things
+if [ -e $XDG_CONFIG_HOME/zsh/local_pre ]; then
+	source $XDG_CONFIG_HOME/zsh/local_pre 
+fi
+
 # Use powerline
 USE_POWERLINE="true"
 # Source manjaro-zsh-configuration
@@ -257,4 +262,9 @@ fi
 # source homebrew in mac
 if [ -e /opt/homebrew ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# source local post oh-my-zsh things
+if [ -e $XDG_CONFIG_HOME/zsh/local_post ]; then
+	source $XDG_CONFIG_HOME/zsh/local_post
 fi

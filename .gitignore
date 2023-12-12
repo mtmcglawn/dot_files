@@ -17,6 +17,8 @@ git/local
 # nvim
 !nvim/
 !nvim/**
+nvim/spell/*.spl
+nvim/spell/**/*.spl
 
 # tmux
 !tmux/
@@ -34,4 +36,6 @@ tmux/plugins/
 zsh/.zcompdump*
 zsh/.zsh_sessions/
 zsh/local_paths
+zsh/local_post
+zsh/local_pre
 zsh/zhistory
