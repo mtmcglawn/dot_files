@@ -16,3 +16,6 @@
 [submodule "zsh/themes/spaceship-prompt"]
 	path = zsh/themes/spaceship-prompt
 	url = ../../spaceship-prompt/spaceship-prompt.git
+[submodule "nvim/pack/dist/start/vim-airline"]
+	path = nvim/pack/dist/start/vim-airline
+	url = ../../vim-airline/vim-airline.git
