@@ -19,6 +19,7 @@ export GPG_TTY=$(tty)
 export VIMINIT=" set nocp | source ${XDG_CONFIG_HOME:-$HOME/.config}/vim/init.vim"
 export PATH="/opt/homebrew/bin:$PATH"
 
+alias tmux=tmux -2
 export ZSH_TMUX_CONFIG=$XDG_CONFIG_HOME/tmux/tmux.conf
 
 umask 0002 # Note: Inverse of typical permissions. I.e., 0002 sets a new file to 0775

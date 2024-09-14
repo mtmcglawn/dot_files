@@ -31,7 +31,8 @@ set scrolloff=5                                 " Show a few lines of context ar
 set shellslash                                  " Set forward slash used when expanding file names
 set showcmd                                     " Display incomplete commands
 set showfulltag                                 " When completing a word in insert mode from the tags file, show both the tag name and a tidied-up form of the search pattern as possible matches
-set showmode                                    " If in insert, replace, or visual mode put a message on the last line.
+"set showmode                                    " If in insert, replace, or visual mode put a message on the last line.
+set noshowmode                                  " We are using vim-airline so we don't want the mode to show - it's already in vim-airline
 set smartcase                                   " Case sensitive when U(pper)C(ase) present
 set smartindent                                 " Do smart autoindenting when starting a new line
 set smarttab                                    " When on a <TAB> in front of a line inserts blanks according to 'shiftwidth'
@@ -198,7 +199,7 @@ augroup END
 augroup filetypedetect
   " Use 'setfiletype foo' to only override if filetype is not already found
   " Use 'set filetype=foo' to override filetype regardless
-  " 
+  "
   " HLA FOM types
   au BufNewFile,BufRead *.fed set filetype=lisp
   au BufNewFile,BufRead *.omt set filetype=lisp
@@ -281,6 +282,8 @@ let g:netrw_banner=0
 " solarized
 " surround
 " tagbar
+let g:general_plugin_settings = expand($XDG_CONFIG_HOME) . '/nvim/pack/global.vim'
+execute 'source '.general_plugin_settings
 
 let g:general_mapping_file = expand($XDG_CONFIG_HOME) . '/nvim/mappings/global.vim'
 execute 'source '.general_mapping_file
