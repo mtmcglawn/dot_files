@@ -22,3 +22,6 @@
 [submodule "nvim/pack/dist/start/vim-airline-themes"]
 	path = nvim/pack/dist/start/vim-airline-themes
 	url = ../../vim-airline/vim-airline-themes.git
+[submodule "nvim/pack/dist/start/tmuxline"]
+	path = nvim/pack/dist/start/tmuxline
+	url = ../../edkolev/tmuxline.vim.git
