@@ -7,8 +7,8 @@ set runtimepath+=$VIM
 set runtimepath+=$VIMRUNTIME
 
 " Where to look to load packages
-set packpath^=$XDG_DATA_HOME/nvim,$XDG_CONFIG_HOME/nvim
-set packpath=+$XDG_CONFIG_HOME/nvim/after,$XDG_DATA_HOME/nvim/after
+set packpath=$XDG_DATA_HOME/nvim,$XDG_CONFIG_HOME/nvim
+set packpath+=$XDG_CONFIG_HOME/nvim/after,$XDG_DATA_HOME/nvim/after
 
 " Where to look for netrw bookmarks/spellfiles/etc.
 let g:netrw_home = $XDG_DATA_HOME."/nvim"
